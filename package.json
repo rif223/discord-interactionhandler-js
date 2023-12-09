@@ -1,10 +1,11 @@
 {
   "name": "discord-interactionhandler-js",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "This is a interaction handler for discord.js!",
-  "main": "src/index.ts",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "ts-node test/components/main"
+    "test": "ts-node test/components/main",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,7 @@
   "devDependencies": {
     "ts-node": "^10.9.1",
     "typescript": "^4.8.4"
-  }
+  },
+  "types": "./lib/index.d.ts",
+  "files": ["lib"]
 }
