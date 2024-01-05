@@ -12,7 +12,7 @@ npm install discord-interactionhandler-js
 
 ## Documentation
 
-???
+--> [Here!!!](https://github.com/rif223/discord-interactionhandler-js/tree/main/docs/index.html)
 
 ## License
 
