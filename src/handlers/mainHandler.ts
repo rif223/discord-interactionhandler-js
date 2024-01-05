@@ -9,6 +9,9 @@ interface HandlerOption {
   guildOnlyError(): any
 }
 
+/**
+ * This class handles all features!
+ */
 export class Handler {
 
   client: Client | any;
@@ -20,6 +23,11 @@ export class Handler {
   middlewareHandler: MiddlewareHandler;
   modalHandler: ModalHandler;
 
+  /**
+   * 
+   * @param client 
+   * @param options 
+   */
   constructor(client: Client, options?: HandlerOption) {
     if (!client) throw Error("The client must be set!");
 
@@ -38,8 +46,11 @@ export class Handler {
 
   }
 
+  /**
+   * This function handles the ready event!
+   */
   readyHandler() {
-
+    
     let cmds: any[] = Object.values(this.commandHandler.cmds);
     cmds = cmds.map(cmd => {
       return {
@@ -59,6 +70,11 @@ export class Handler {
 
   }
 
+  /**
+   * This function handles the interaction event!
+   * @param interaction 
+   * @returns 
+   */
   interactionCreateHandler(interaction: Interaction) {
 
     if(interaction.isCommand()) {

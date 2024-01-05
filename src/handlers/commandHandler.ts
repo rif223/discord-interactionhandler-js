@@ -5,20 +5,32 @@ import { UserCommand } from "../interfaces/classes/userCommandInterface";
 
 import * as fs from "fs";
 
-import { CommandInteraction } from "discord.js";
+import { CommandInteraction, CommandInteractionOptionResolver } from "discord.js";
 import { Handler } from "./mainHandler";
 import { CommandContext } from "../interfaces/contexts/commandContextInterface";
+import { compFunc, modalFunc } from "../interfaces/contexts/funcTypes";
 
+/**
+ * This class handles the commands!
+ */
 export class CommandHandler {
 
     mhandler: Handler;
     cmds: any;
-
+    
+    /**
+     * 
+     * @param mhandler 
+     */
     constructor(mhandler: Handler) {
         this.mhandler = mhandler;
         this.cmds = {};
     }
 
+    /**
+     * This function registers a single command!
+     * @param CmdClass 
+     */
     registerCommand(CmdClass: any) {
         if (!CmdClass) throw Error("The class must be set!");
         if (CmdClass.prototype instanceof SlashCommand || CmdClass.prototype instanceof MessageCommand || CmdClass.prototype instanceof UserCommand || CmdClass.prototype instanceof Command) {
@@ -31,29 +43,33 @@ export class CommandHandler {
         }
     }
 
+    /**
+     * This function registers multiple command!
+     * @param CmdClassArray 
+     */
     registerCommands(CmdClassArray: any[]) {
         CmdClassArray.forEach(CmdClass => {
             this.registerCommand(CmdClass);
         });
     }
 
-    registerCommandsIn(path: string) {
-        fs.readdir(path, (err: any, files: any[]) => {
-            if (err) throw Error(err);
-            files.forEach(file => {
-                const cmd = require(path + file);
-                this.registerCommand(cmd);
-            });
-        });
-    }
-
+    /**
+     * This function sets the default error message if a command is guild only!
+     * @param ctx
+     * @returns The function returns the error reply!
+     */
     defaultGuildOnlyError(ctx: CommandContext) {
         return this.cmds[ctx.interaction.commandName].sendErrorMsg(
             ctx.interaction,
             "This command can only be used for guilds!"
         );
     }
-
+    
+    /**
+     * This function handles the command interaction event!
+     * @param interaction 
+     * @returns
+     */
     handle(interaction: CommandInteraction) {
         let ctx: CommandContext = {
             interaction: interaction,
@@ -63,8 +79,8 @@ export class CommandHandler {
             user: interaction.user,
             command: interaction.command,
             handler: this.mhandler,
-            addComponentEvent: (comp: any, runComponentFunc: any) => this.mhandler.componentHandler.addComponentEvent(comp, runComponentFunc),
-            addModalEvent: (mod: any, runModalFunc: any) => this.mhandler.modalHandler.addModalEvent(mod, runModalFunc)
+            addComponentEvent: (comp: any, runComponentFunc: compFunc) => this.mhandler.componentHandler.addComponentEvent(comp, runComponentFunc),
+            addModalEvent: (mod: any, runModalFunc: modalFunc) => this.mhandler.modalHandler.addModalEvent(mod, runModalFunc)
         };
         if (!interaction.inGuild() && this.cmds[interaction.commandName].guildOnly) return this.mhandler.guildOnlyError(ctx);
 

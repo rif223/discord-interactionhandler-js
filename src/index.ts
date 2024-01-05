@@ -1,5 +1,6 @@
 // main
 export * from "./handlers/mainHandler";
+export * from "./interfaces/contexts/contextInterface"
 
 // commands
 export * from "./handlers/commandHandler";

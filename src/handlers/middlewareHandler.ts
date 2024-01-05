@@ -1,8 +1,10 @@
 import { MiddlewareAfterInterface, MiddlewareBeforeInterface } from "../interfaces/classes/middlewareInterface";
 import { Handler } from "./mainHandler";
-
 import * as fs from "fs";
 
+/**
+ * This class handles the middlewares!
+ */
 export class MiddlewareHandler {
 
     mhandler: Handler;
@@ -10,6 +12,10 @@ export class MiddlewareHandler {
     middlewaresBefore: any[];
     middlewaresAfter: any[];
 
+    /**
+     * 
+     * @param mhandler 
+     */
     constructor(mhandler: Handler) {
         this.mhandler = mhandler;
 
@@ -17,6 +23,10 @@ export class MiddlewareHandler {
         this.middlewaresAfter = [];
     }
 
+    /**
+     * This function registers a middleware!
+     * @param MW 
+     */
     registerMiddleware(MW: any) {
         if (!MW) throw Error("The middleware class must be set!");
         if ((MW.prototype instanceof MiddlewareBeforeInterface) || (MW.prototype instanceof MiddlewareAfterInterface)) {
@@ -32,6 +42,10 @@ export class MiddlewareHandler {
         }
       }
     
+      /**
+       * This function registers middlewares!
+       * @param MWArray 
+       */
       registerMiddlewares(MWArray: any[]) {
         MWArray.forEach(MW => {
           this.registerMiddleware(MW);

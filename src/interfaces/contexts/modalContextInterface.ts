@@ -1,18 +1,14 @@
 import {
-    Guild,
-    TextBasedChannel,
-    User,
-    ModalSubmitInteraction,
-    ModalBuilder
+    ModalSubmitInteraction
 } from "discord.js";
-import { Handler } from "../../handlers/mainHandler";
+import { BaseContext } from "./contextInterface";
 
-export interface ModalContext {
-    interaction: ModalSubmitInteraction,
-    guild: Guild | null,
-    channel: TextBasedChannel | null,
-    user: User,
-    handler: Handler,
-    addComponentEvent: (comp: any, runComponentFunc: any) => any;
-    addModalEvent: (mod: any, runModalFunc: any) => any;
+/**
+ * This is the modal context interface!
+ */
+export interface ModalContext extends BaseContext {
+    /**
+     * This is the modal interaction!
+     */
+    interaction: ModalSubmitInteraction
 }

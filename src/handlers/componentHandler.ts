@@ -1,21 +1,33 @@
-import { MessageComponentInteraction } from "discord.js";
+import { APIActionRowComponent, APIActionRowComponentTypes, AnyComponentBuilder, ButtonBuilder, ChannelSelectMenuBuilder, MentionableSelectMenuBuilder, MessageActionRowComponentBuilder, MessageComponentInteraction, RoleSelectMenuBuilder, StringSelectMenuBuilder, UserSelectMenuBuilder } from "discord.js";
 import { ComponentContext } from "../interfaces/contexts/componentContextInterface";
 import { Handler } from "./mainHandler";
 import { ComponentInterface } from "../interfaces/classes/componentInterface";
+import { compFunc, modalFunc } from "../interfaces/contexts/funcTypes";
 
+/**
+ * This class handles the components!
+ */
 export class ComponentHandler {
 
     mhandler: Handler;
     comps: any;
     comps_c: any;
 
+    /**
+     * 
+     * @param mhandler
+     */
     constructor(mhandler: Handler) {
         this.mhandler = mhandler;
         this.comps = {};
         this.comps_c = {};
     }
 
-    registerModal(CompClass: any) {
+    /**
+     * This function registers a component!
+     * @param CompClass 
+     */
+    registerComponent(CompClass: any) {
         if (!CompClass) throw Error("The class must be set!");
         if (CompClass.prototype instanceof ComponentInterface) {
             let comp = new CompClass();
@@ -27,11 +39,22 @@ export class ComponentHandler {
         }
     }
 
-    addComponentEvent(comp: any, runComponentFunc: any) {
+    /**
+     * This function adds a component!
+     * @param comp 
+     * @param runComponentFunc 
+     * @returns 
+     */
+    addComponentEvent(comp: any, runComponentFunc: compFunc) {
         this.comps[comp.data.custom_id] = runComponentFunc;
         return comp;
     }
 
+    /**
+     * This function handles the component interaction event!
+     * @param interaction 
+     * @returns 
+     */
     handle(interaction: MessageComponentInteraction) {
 
         let ctx: ComponentContext = {
@@ -40,8 +63,8 @@ export class ComponentHandler {
             channel: interaction.channel,
             user: interaction.user,
             handler: this.mhandler,
-            addComponentEvent: (comp: any, runComponentFunc: any) => this.mhandler.componentHandler.addComponentEvent(comp, runComponentFunc),
-            addModalEvent: (mod: any, runModalFunc: any) => this.mhandler.modalHandler.addModalEvent(mod, runModalFunc)
+            addComponentEvent: (comp: any, runComponentFunc: compFunc) => this.mhandler.componentHandler.addComponentEvent(comp, runComponentFunc),
+            addModalEvent: (mod: any, runModalFunc: modalFunc) => this.mhandler.modalHandler.addModalEvent(mod, runModalFunc)
         };
 
         if(Object.keys(this.comps_c).length !== 0)  this.comps_c[""].run(ctx);

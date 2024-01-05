@@ -30,7 +30,7 @@ export class FaqCommand extends SlashCommand {
         ])
 
         let string = ctx.options.getString("string");
-        ctx.interaction.reply({ content: string, components: [raw], fetchReply: true });
+        ctx.interaction.reply({ content: string || undefined, components: [raw], fetchReply: true });
 
     }
 

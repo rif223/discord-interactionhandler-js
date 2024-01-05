@@ -27,7 +27,7 @@ export class SayCommand extends SlashCommand {
     async run(ctx: CommandContext) {
 
         let string = ctx.options.getString("string");
-        ctx.interaction.reply({ content: string, fetchReply: true });
+        ctx.interaction.reply({ content: string || undefined, fetchReply: true });
 
     }
 

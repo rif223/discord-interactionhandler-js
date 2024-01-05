@@ -1,21 +1,28 @@
 import {
     CommandInteraction,
-    Guild,
-    TextBasedChannel,
-    User,
     ApplicationCommand,
-    Message
+    CommandInteractionOptionResolver,
+    CacheType,
+    CachedManager,
+    Options,
+    CommandOptionChannelResolvableType
 } from "discord.js";
-import { Handler } from "../../handlers/mainHandler";
+import { BaseContext } from "./contextInterface";
 
-export interface CommandContext {
+/**
+ * This is the command context interface!
+ */
+export interface CommandContext extends BaseContext {
+    /**
+     * This is the command interaction!
+     */
     interaction: CommandInteraction,
+    /**
+     * They are the options of the command!
+     */
     options: any,
-    guild: Guild | null,
-    channel: TextBasedChannel | null,
-    user: User,
-    command: ApplicationCommand | null,
-    handler: Handler,
-    addComponentEvent: (comp: any, runComponentFunc: any) => any;
-    addModalEvent: (mod: any, runModalFunc: any) => any;
+    /**
+     * This is the command!
+     */
+    command: ApplicationCommand | null
 }

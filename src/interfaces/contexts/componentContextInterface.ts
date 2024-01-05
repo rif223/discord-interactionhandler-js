@@ -1,17 +1,14 @@
 import {
-    Guild,
-    TextBasedChannel,
-    User,
     MessageComponentInteraction
 } from "discord.js";
-import { Handler } from "../../handlers/mainHandler";
+import { BaseContext } from "./contextInterface";
 
-export interface ComponentContext {
-    interaction: MessageComponentInteraction,
-    guild: Guild | null,
-    channel: TextBasedChannel | null,
-    user: User,
-    handler: Handler,
-    addComponentEvent: (comp: any, runComponentFunc: any) => any;
-    addModalEvent: (mod: any, runModalFunc: any) => any;
+/**
+ * This is the component context interface!
+ */
+export interface ComponentContext extends BaseContext {
+    /**
+     * This is the component interaction!
+     */
+    interaction: MessageComponentInteraction
 }
