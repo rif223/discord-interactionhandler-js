@@ -15,8 +15,8 @@ import {
 
 const handler = new Handler(client);
 
-handler.middlewareHandler.registerMiddleware(require("./middleware").MiddlewareBefore);
-handler.middlewareHandler.registerMiddleware(require("./middleware").MiddlewareAfter);
-handler.commandHandler.registerCommand(require("./cmd/say").SayCommand);
+handler.middlewareHandler.registerMiddleware((await import("./middleware")).MiddlewareBefore);
+handler.middlewareHandler.registerMiddleware((await import("./middleware")).MiddlewareAfter);
+handler.commandHandler.registerCommand((await import("./cmd/say")).SayCommand);
 
 client.login("1234567890");

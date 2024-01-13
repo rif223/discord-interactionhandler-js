@@ -1,11 +1,11 @@
 import { Guild, TextBasedChannel, User } from "discord.js";
-import { Handler } from "../../handlers/mainHandler";
+import Handler from "../../handlers/mainHandler";
 import { compFunc, modalFunc } from "./funcTypes";
 
 /**
  * This is the base context interface!
  */
-export interface BaseContext {
+export default interface BaseContext {
     /**
      * This is the guild of the event!
      */

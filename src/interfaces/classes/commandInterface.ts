@@ -3,12 +3,12 @@ import {
     ApplicationCommandType,
     CommandInteraction
 } from "discord.js";
-import { CommandContext } from "../contexts/commandContextInterface";
+import CommandContext from "../contexts/commandContextInterface";
 
 /**
  * A command requires this command class!
  */
-export class Command {
+export default class Command {
     /**
      * This function set the command name!
      * @returns The function must be return a string!

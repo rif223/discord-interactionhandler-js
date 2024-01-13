@@ -1,19 +1,16 @@
-import { Command } from "../interfaces/classes/commandInterface";
-import { MessageCommand } from "../interfaces/classes/messageCommandInterface";
-import { SlashCommand } from "../interfaces/classes/slashCommandInterface";
-import { UserCommand } from "../interfaces/classes/userCommandInterface";
-
-import * as fs from "fs";
-
-import { CommandInteraction, CommandInteractionOptionResolver } from "discord.js";
-import { Handler } from "./mainHandler";
-import { CommandContext } from "../interfaces/contexts/commandContextInterface";
+import Command from "../interfaces/classes/commandInterface";
+import MessageCommand from "../interfaces/classes/messageCommandInterface";
+import SlashCommand from "../interfaces/classes/slashCommandInterface";
+import UserCommand from "../interfaces/classes/userCommandInterface";
+import { CommandInteraction } from "discord.js";
+import Handler from "./mainHandler";
+import CommandContext from "../interfaces/contexts/commandContextInterface";
 import { compFunc, modalFunc } from "../interfaces/contexts/funcTypes";
 
 /**
  * This class handles the commands!
  */
-export class CommandHandler {
+export default class CommandHandler {
 
     mhandler: Handler;
     cmds: any;
@@ -29,7 +26,14 @@ export class CommandHandler {
 
     /**
      * This function registers a single command!
-     * @param CmdClass 
+     * @param CmdClass
+     * @example
+     * ```
+     * ...
+     * 
+     * handler.commandHandler.registerCommand(CommandClass);
+     * 
+     * ```
      */
     registerCommand(CmdClass: any) {
         if (!CmdClass) throw Error("The class must be set!");

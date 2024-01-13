@@ -1,12 +1,26 @@
 import {
     EmbedBuilder
 } from "discord.js";
-import { ComponentContext } from "../contexts/componentContextInterface";
+import ComponentContext from "../contexts/componentContextInterface";
 
 /**
- * A component requires this component class!
+ * A component requires the ComponentInterface class!
+ * @example
+ * ```
+ * import { ComponentContext, ComponentInterface } from "discord-interactionhandler-js";
+ * 
+ * class Comp extends ComponentInterface {
+ *     get custom_id() {
+ *         return "comp_1";
+ *     }
+ *
+ *     async run(ctx: ComponentContext) {
+ *
+ *     }
+ * }
+ * ```
  */
-export class ComponentInterface {
+export default class ComponentInterface {
     /**
      * This function set the custom id!
      * @returns The function must be return a string!

@@ -1,11 +1,10 @@
 import { MiddlewareAfterInterface, MiddlewareBeforeInterface } from "../interfaces/classes/middlewareInterface";
-import { Handler } from "./mainHandler";
-import * as fs from "fs";
+import Handler from "./mainHandler";
 
 /**
  * This class handles the middlewares!
  */
-export class MiddlewareHandler {
+export default class MiddlewareHandler {
 
     mhandler: Handler;
 
@@ -26,6 +25,13 @@ export class MiddlewareHandler {
     /**
      * This function registers a middleware!
      * @param MW 
+     * @example
+     * ```
+     * ...
+     * 
+     * handler.middlewareHandler.registerMiddleware(MiddlewareClass);
+     * 
+     * ```
      */
     registerMiddleware(MW: any) {
         if (!MW) throw Error("The middleware class must be set!");
@@ -49,16 +55,6 @@ export class MiddlewareHandler {
       registerMiddlewares(MWArray: any[]) {
         MWArray.forEach(MW => {
           this.registerMiddleware(MW);
-        });
-      }
-
-      registerMiddlewaresIn(path: string) {
-        fs.readdir(path, (err: any, files: any[]) => {
-            if (err) throw Error(err);
-            files.forEach(file => {
-                const mw = require(path + file);
-                this.registerMiddleware(mw);
-            });
         });
       }
 }

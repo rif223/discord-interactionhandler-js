@@ -1,13 +1,13 @@
 import { ModalSubmitInteraction } from "discord.js";
-import { Handler } from "./mainHandler";
-import { ModalInterface } from "../interfaces/classes/modalInterface";
-import { ModalContext } from "../interfaces/contexts/modalContextInterface";
+import Handler from "./mainHandler";
+import ModalInterface from "../interfaces/classes/modalInterface";
+import ModalContext from "../interfaces/contexts/modalContextInterface";
 import { compFunc, modalFunc } from "../interfaces/contexts/funcTypes";
 
 /**
  * This class handles the modals!
  */
-export class ModalHandler {
+export default class ModalHandler {
 
     mhandler: Handler;
     modals: any;

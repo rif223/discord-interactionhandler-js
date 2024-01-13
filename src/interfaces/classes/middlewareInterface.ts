@@ -1,5 +1,5 @@
-import { CommandContext } from "../contexts/commandContextInterface";
-import { Command } from "./commandInterface";
+import CommandContext from "../contexts/commandContextInterface";
+import Command from "./commandInterface";
 
 /**
  * If a middleware is to be executed before a command, it needs this class required!

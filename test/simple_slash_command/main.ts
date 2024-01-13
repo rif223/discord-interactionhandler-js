@@ -15,6 +15,6 @@ import {
 
 const handler = new Handler(client);
 
-handler.commandHandler.registerCommand(require("./cmd/say").SayCommand);
+handler.commandHandler.registerCommand((await import("./cmd/say")).SayCommand);
 
 client.login("1234567890");

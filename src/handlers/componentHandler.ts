@@ -1,13 +1,13 @@
 import { APIActionRowComponent, APIActionRowComponentTypes, AnyComponentBuilder, ButtonBuilder, ChannelSelectMenuBuilder, MentionableSelectMenuBuilder, MessageActionRowComponentBuilder, MessageComponentInteraction, RoleSelectMenuBuilder, StringSelectMenuBuilder, UserSelectMenuBuilder } from "discord.js";
-import { ComponentContext } from "../interfaces/contexts/componentContextInterface";
-import { Handler } from "./mainHandler";
-import { ComponentInterface } from "../interfaces/classes/componentInterface";
+import ComponentContext from "../interfaces/contexts/componentContextInterface";
+import Handler from "./mainHandler";
+import ComponentInterface from "../interfaces/classes/componentInterface";
 import { compFunc, modalFunc } from "../interfaces/contexts/funcTypes";
 
 /**
  * This class handles the components!
  */
-export class ComponentHandler {
+export default class ComponentHandler {
 
     mhandler: Handler;
     comps: any;

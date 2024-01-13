@@ -15,6 +15,6 @@ import {
 
 const handler = new Handler(client);
 
-handler.commandHandler.registerCommand(require("./cmd/faq").FaqCommand);
+handler.commandHandler.registerCommand((await import("./cmd/faq")).FaqCommand);
 
 client.login("1234567890");

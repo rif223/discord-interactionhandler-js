@@ -1,18 +1,13 @@
 import {
     CommandInteraction,
-    ApplicationCommand,
-    CommandInteractionOptionResolver,
-    CacheType,
-    CachedManager,
-    Options,
-    CommandOptionChannelResolvableType
+    ApplicationCommand
 } from "discord.js";
-import { BaseContext } from "./contextInterface";
+import BaseContext from "./contextInterface";
 
 /**
  * This is the command context interface!
  */
-export interface CommandContext extends BaseContext {
+export default interface CommandContext extends BaseContext {
     /**
      * This is the command interaction!
      */

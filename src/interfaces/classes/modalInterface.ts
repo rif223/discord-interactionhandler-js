@@ -2,12 +2,26 @@ import {
     EmbedBuilder,
     ModalSubmitInteraction
 } from "discord.js";
-import { ModalContext } from "../contexts/modalContextInterface";
+import ModalContext from "../contexts/modalContextInterface";
 
 /**
- * A modal requires this modal class!
+ * A modal requires the ModalInterface class!
+ * @example
+ * ```
+ * import { ModalContext, ModalInterface } from "discord-interactionhandler-js";
+ * 
+ * class Modal extends ModalInterface {
+ *     get custom_id() {
+ *         return "modal_1";
+ *     }
+ *
+ *     async run(ctx: ModalContext) {
+ *
+ *     }
+ * }
+ * ```
  */
-export class ModalInterface {
+export default class ModalInterface {
     /**
      * This function set the custom id!
      * @returns The function must be return a string!

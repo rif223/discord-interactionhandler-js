@@ -1,8 +1,8 @@
 import { Client, Interaction } from "discord.js";
-import { CommandHandler } from "./commandHandler";
-import { ComponentHandler } from "./componentHandler";
-import { MiddlewareHandler } from "./middlewareHandler";
-import { ModalHandler } from "./modalHandler";
+import CommandHandler from "./commandHandler";
+import ComponentHandler from "./componentHandler";
+import MiddlewareHandler from "./middlewareHandler";
+import ModalHandler from "./modalHandler";
 
 interface HandlerOption {
   guildId: number,
@@ -11,8 +11,16 @@ interface HandlerOption {
 
 /**
  * This class handles all features!
+ * @example
+ * ```
+ * import { Client } from "discord.js";
+ * import { Handler } from "discord-interactionhandler-js";
+ * 
+ * const handler = new Handler(client);
+ * 
+ * ```
  */
-export class Handler {
+export default class Handler {
 
   client: Client | any;
   guildId?: number;
