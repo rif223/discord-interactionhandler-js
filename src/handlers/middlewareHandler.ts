@@ -1,5 +1,5 @@
-import { MiddlewareAfterInterface, MiddlewareBeforeInterface } from "../interfaces/classes/middlewareInterface";
-import Handler from "./mainHandler";
+import { MiddlewareAfterInterface, MiddlewareBeforeInterface } from "../interfaces/classes/middlewareInterface.js";
+import Handler from "./mainHandler.js";
 
 /**
  * This class handles the middlewares!

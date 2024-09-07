@@ -1,8 +1,8 @@
 import { ModalSubmitInteraction } from "discord.js";
-import Handler from "./mainHandler";
-import ModalInterface from "../interfaces/classes/modalInterface";
-import ModalContext from "../interfaces/contexts/modalContextInterface";
-import { compFunc, modalFunc } from "../interfaces/contexts/funcTypes";
+import Handler from "./mainHandler.js";
+import ModalInterface from "../interfaces/classes/modalInterface.js";
+import ModalContext from "../interfaces/contexts/modalContextInterface.js";
+import { compFunc, modalFunc } from "../interfaces/contexts/funcTypes.js";
 
 /**
  * This class handles the modals!

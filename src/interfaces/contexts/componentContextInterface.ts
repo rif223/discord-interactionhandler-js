@@ -1,7 +1,7 @@
 import {
     MessageComponentInteraction
 } from "discord.js";
-import BaseContext from "./contextInterface";
+import BaseContext from "./contextInterface.js";
 
 /**
  * This is the component context interface!

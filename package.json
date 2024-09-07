@@ -1,10 +1,10 @@
 {
   "name": "discord-interactionhandler-js",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "This is a interaction handler for discord.js!",
   "main": "lib/index.js",
   "scripts": {
-    "test": "ts-node test/modals/main",
+    "test": "node test/main.js",
     "build": "tsc",
     "docs": "typedoc --out docs src"
   },
@@ -15,12 +15,9 @@
   "author": "rif223",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^14.14.1"
+    "discord.js": "14.14.1"
   },
-  "devDependencies": {
-    "ts-node": "^10.9.1",
-    "typescript": "^4.8.4"
-  },
-  "types": "./lib/index.d.ts",
+  "type": "module",
+  "types": "lib/index.d.ts",
   "files": ["lib"]
 }

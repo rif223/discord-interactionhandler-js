@@ -2,7 +2,7 @@ import {
     CommandInteraction,
     ApplicationCommand
 } from "discord.js";
-import BaseContext from "./contextInterface";
+import BaseContext from "./contextInterface.js";
 
 /**
  * This is the command context interface!

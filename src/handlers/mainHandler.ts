@@ -1,8 +1,8 @@
 import { Client, Interaction } from "discord.js";
-import CommandHandler from "./commandHandler";
-import ComponentHandler from "./componentHandler";
-import MiddlewareHandler from "./middlewareHandler";
-import ModalHandler from "./modalHandler";
+import CommandHandler from "./commandHandler.js";
+import ComponentHandler from "./componentHandler.js";
+import MiddlewareHandler from "./middlewareHandler.js";
+import ModalHandler from "./modalHandler.js";
 
 interface HandlerOption {
   guildId: number,

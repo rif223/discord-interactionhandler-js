@@ -1,6 +1,6 @@
 import { Guild, TextBasedChannel, User } from "discord.js";
-import Handler from "../../handlers/mainHandler";
-import { compFunc, modalFunc } from "./funcTypes";
+import Handler from "../../handlers/mainHandler.js";
+import { compFunc, modalFunc } from "./funcTypes.js";
 
 /**
  * This is the base context interface!

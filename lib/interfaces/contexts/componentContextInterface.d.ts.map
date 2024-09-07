@@ -1,0 +1,1 @@
+{"version":3,"file":"componentContextInterface.d.ts","sourceRoot":"","sources":["../../../src/interfaces/contexts/componentContextInterface.ts"],"names":[],"mappings":"AAAA,OAAO,EACH,2BAA2B,EAC9B,MAAM,YAAY,CAAC;AACpB,OAAO,WAAW,MAAM,uBAAuB,CAAC;AAEhD;;GAEG;AACH,MAAM,CAAC,OAAO,WAAW,gBAAiB,SAAQ,WAAW;IACzD;;OAEG;IACH,WAAW,EAAE,2BAA2B,CAAA;CAC3C"}

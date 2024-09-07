@@ -1,5 +1,5 @@
 import { ApplicationCommandType } from "discord.js";
-import Command from "./commandInterface";
+import Command from "./commandInterface.js";
 
 /**
  * A message command requires this command class!
