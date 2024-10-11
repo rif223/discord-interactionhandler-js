@@ -1,1 +1,0 @@
-{"version":3,"file":"modalContextInterface.d.ts","sourceRoot":"","sources":["../../../src/interfaces/contexts/modalContextInterface.ts"],"names":[],"mappings":"AAAA,OAAO,EACH,sBAAsB,EACzB,MAAM,YAAY,CAAC;AACpB,OAAO,WAAW,MAAM,uBAAuB,CAAC;AAEhD;;GAEG;AACH,MAAM,CAAC,OAAO,WAAW,YAAa,SAAQ,WAAW;IACrD;;OAEG;IACH,WAAW,EAAE,sBAAsB,CAAA;CACtC"}

@@ -1,5 +1,5 @@
-import ModalContext from "./modalContextInterface.js";
-import ComponentContext from "./componentContextInterface.js";
+import ModalContext from "./modalContextInterface";
+import ComponentContext from "./componentContextInterface";
 
 export type modalFunc = (ctx: ModalContext) => void;
 export type compFunc = (ctx: ComponentContext) => void;

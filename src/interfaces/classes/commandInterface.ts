@@ -3,7 +3,7 @@ import {
     ApplicationCommandType,
     CommandInteraction
 } from "discord.js";
-import CommandContext from "../contexts/commandContextInterface.js";
+import CommandContext from "../contexts/commandContextInterface";
 
 /**
  * A command requires this command class!

@@ -2,7 +2,7 @@ import {
     EmbedBuilder,
     ModalSubmitInteraction
 } from "discord.js";
-import ModalContext from "../contexts/modalContextInterface.js";
+import ModalContext from "../contexts/modalContextInterface";
 
 /**
  * A modal requires the ModalInterface class!

@@ -1,5 +1,5 @@
 import { ApplicationCommandType } from "discord.js";
-import Command from "./commandInterface.js";
+import Command from "./commandInterface";
 
 /**
  * A slash command requires this command class!

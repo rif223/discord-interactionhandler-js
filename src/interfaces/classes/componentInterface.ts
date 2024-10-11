@@ -1,7 +1,7 @@
 import {
     EmbedBuilder
 } from "discord.js";
-import ComponentContext from "../contexts/componentContextInterface.js";
+import ComponentContext from "../contexts/componentContextInterface";
 
 /**
  * A component requires the ComponentInterface class!

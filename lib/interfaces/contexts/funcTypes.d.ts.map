@@ -1,1 +1,0 @@
-{"version":3,"file":"funcTypes.d.ts","sourceRoot":"","sources":["../../../src/interfaces/contexts/funcTypes.ts"],"names":[],"mappings":"AAAA,OAAO,YAAY,MAAM,4BAA4B,CAAC;AACtD,OAAO,gBAAgB,MAAM,gCAAgC,CAAC;AAE9D,MAAM,MAAM,SAAS,GAAG,CAAC,GAAG,EAAE,YAAY,KAAK,IAAI,CAAC;AACpD,MAAM,MAAM,QAAQ,GAAG,CAAC,GAAG,EAAE,gBAAgB,KAAK,IAAI,CAAC"}

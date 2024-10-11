@@ -1,11 +1,11 @@
-import Command from "../interfaces/classes/commandInterface.js";
-import MessageCommand from "../interfaces/classes/messageCommandInterface.js";
-import SlashCommand from "../interfaces/classes/slashCommandInterface.js";
-import UserCommand from "../interfaces/classes/userCommandInterface.js";
+import Command from "../interfaces/classes/commandInterface";
+import MessageCommand from "../interfaces/classes/messageCommandInterface";
+import SlashCommand from "../interfaces/classes/slashCommandInterface";
+import UserCommand from "../interfaces/classes/userCommandInterface";
 import { CommandInteraction } from "discord.js";
-import Handler from "./mainHandler.js";
-import CommandContext from "../interfaces/contexts/commandContextInterface.js";
-import { compFunc, modalFunc } from "../interfaces/contexts/funcTypes.js";
+import Handler from "./mainHandler";
+import CommandContext from "../interfaces/contexts/commandContextInterface";
+import { compFunc, modalFunc } from "../interfaces/contexts/funcTypes";
 
 /**
  * This class handles the commands!

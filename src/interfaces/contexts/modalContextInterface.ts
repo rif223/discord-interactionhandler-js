@@ -1,7 +1,7 @@
 import {
     ModalSubmitInteraction
 } from "discord.js";
-import BaseContext from "./contextInterface.js";
+import BaseContext from "./contextInterface";
 
 /**
  * This is the modal context interface!
